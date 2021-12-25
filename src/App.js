@@ -1,5 +1,5 @@
-import './App.css';
-import "./master.css";
+import './css/App.css';
+import "./css/master.css";
 import {Tabs, Tab} from 'react-bootstrap';
 import Lookup from './components/Lookup';
 import Feed from './components/Feed';

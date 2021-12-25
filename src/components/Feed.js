@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {getNEOFeed} from '../utils/getData';
 import FeedData from './FeedData';
-var format = require('date-format');
+import Loader from "react-loader-spinner";
 
 
 const Feed = () => {
@@ -12,6 +12,7 @@ const Feed = () => {
         endDate: ''
     });
 
+    const [loading, setLoading] = useState(false);
     const [neoFeed, setNeoFeed] = useState({});
 
     return (
@@ -31,14 +32,27 @@ const Feed = () => {
             }} />
 
             <button className='blue-btn mb-3r' onClick={() => {
+                setLoading(true);
                 setNeoFeed({});
                 getNEOFeed(date.startDate, date.endDate).then(response => {
                 !response.isError ? setNeoFeed(response) : setNeoFeed({}); 
+                setLoading(false);
                 })
             }}>Click me</button>
 
             {
-                Object.keys(neoFeed).length > 0 && <FeedData data={neoFeed.data} />
+                loading && <Loader
+                type="Grid"
+                color="#0058ff"
+                height={50}
+                width={50}
+                className="mt-3r"
+              />
+
+            }
+
+            {
+                !loading && Object.keys(neoFeed).length > 0 && <FeedData data={neoFeed.data} />
             }
 
         </div>

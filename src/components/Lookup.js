@@ -2,6 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {getNEOLookup} from '../utils/getData';
 import LookupData from './LookupData';
+import Loader from "react-loader-spinner";
 
 const Lookup = () => {
     const [id, setId] = useState('3542519');
@@ -18,7 +19,14 @@ const Lookup = () => {
                 setLoading(false);
             }) }} disabled={!id}>Fetch Data</button>
             {
-                loading && <div className='loader'>Ho Ho Ho!</div>
+                loading && <Loader
+                type="Grid"
+                color="#0058ff"
+                height={50}
+                width={50}
+                className="mt-3r"
+              />
+
             }
             {
                 !loading && Object.keys(neoLookup).length > 0 && <LookupData data={neoLookup.data} className="mt-3r" />

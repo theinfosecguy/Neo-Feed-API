@@ -3,7 +3,7 @@ import {Tabs, Tab} from 'react-bootstrap';
 
 const BTabs = ({Feed, Lookup}) => {
     return (
-        <Tabs defaultActiveKey="neoLookup" id="uncontrolled-tab-example" className='mb-3r'>
+        <Tabs defaultActiveKey="neoLookup" id="uncontrolled-tab-example" className='mb-3r btabs'>
             <Tab eventKey="neoFeed" title="Nasa Neo FEED API">
             <Feed />
             </Tab>

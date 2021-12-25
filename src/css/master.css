@@ -26,6 +26,15 @@
     justify-content: center;
 }
 
+.btabs {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    max-width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 /* Overwriting CSS for Bootstrap Accordion */
 
 .accordion-item{

@@ -11,8 +11,8 @@ const FeedData = (props) => {
                 {   
                     Object.keys(near_earth_objects).map((key, index) => {
                         return (
-                            <Accordion.Item eventKey={index} className="mt-3">
-                                <Accordion.Header>
+                            <Accordion.Item eventKey={index} className="mt-3 mb-3r">
+                                <Accordion.Header className={index%2 === 0 ? "accordion-odd-blue": "accordion-even-blue"}>
                                     {key}
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -20,11 +20,12 @@ const FeedData = (props) => {
                                     near_earth_objects[key].map((item, index) => {
                                         return (
                                             <div key={index}>
-                                                <h4>Name: {item.name}</h4>
-                                                <h5>JPL URL: {item.nasa_jpl_url}</h5>
-                                                <h5>Designation: {item.designation}</h5>
-                                                <h5>Minimum Diameter: {item.estimated_diameter.meters.estimated_diameter_min}</h5>
-                                                <h5>Maximum Diameter: {item.estimated_diameter.meters.estimated_diameter_max}</h5>
+                                                <h5 className="mt-3">Name: {item.name}</h5>
+                                                <h6>JPL URL: {item.nasa_jpl_url}</h6>
+                                                <h6>Designation: {item.designation}</h6>
+                                                <h6>Minimum Diameter: {item.estimated_diameter.meters.estimated_diameter_min}</h6>
+                                                <h6>Maximum Diameter: {item.estimated_diameter.meters.estimated_diameter_max}</h6>
+                                                <hr/>
                                             </div>
                                         )
                                     })

@@ -16,21 +16,21 @@ const Feed = () => {
 
     return (
         <div className='feed-root-container'>
-            <input type="date" placeholder='Start Date' onChange={(e) => {
+            <input className='lookup-input' type="date" placeholder='Start Date' onChange={(e) => {
                 setDate({
                     ...date,
                     startDate: e.target.value
                 })
             }} />
 
-            <input type="date" placeholder='End Date' onChange={(e) => {
+            <input className='lookup-input mt-3' type="date" placeholder='End Date' onChange={(e) => {
                 setDate({
                     ...date,
                     endDate: e.target.value
                 })
             }} />
 
-            <button onClick={() => {
+            <button className='blue-btn mb-3r' onClick={() => {
                 setNeoFeed({});
                 getNEOFeed(date.startDate, date.endDate).then(response => {
                 !response.isError ? setNeoFeed(response) : setNeoFeed({}); 

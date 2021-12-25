@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.App{
+    background-color: white;
+    min-height: 100vh;
+    height: auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    font-family: 'Rubik', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blue-text{
+    color: #0058ff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Overwriting CSS for Bootstrap Tabs */
+
+.nav-tabs {
+    border-bottom: 0px!important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: white!important;
+    background-color: #0058ff!important;
+    margin-right: 5rem;
+    border-radius: 22px;
+    height: 2.7rem!important;
+    border: 0px!important;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-tabs .nav-link {
+    margin-bottom: 0px!important; 
+    background: white!important;
+    border: none!important;
+    border: 2px solid!important;
+    height: 2.7rem!important;
+    border-radius: 22px!important;
+    margin-right: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-tabs {
+    border-bottom: 0px!important;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.mb-3r{
+    margin-bottom: 3rem!important;
 }

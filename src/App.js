@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {Tabs, Tab} from 'react-bootstrap';
+import Lookup from './components/Lookup';
+import Feed from './components/Feed';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>
+        NASA NEO <span className="blue-text">Lookup</span> and <span className="blue-text">Feed</span> API
+      </h1>
+      <Tabs defaultActiveKey="neoLookup" id="uncontrolled-tab-example" className='mb-3r'>
+        <Tab eventKey="neoFeed" title="Nasa Neo FEED API">
+          <Feed />
+        </Tab>
+        <Tab eventKey="neoLookup" title="Nasa Neo Lookup API">
+          <Lookup />
+        </Tab>
+      </Tabs>
+      <Toaster />
     </div>
   );
 }

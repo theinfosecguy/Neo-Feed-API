@@ -5,6 +5,7 @@
     min-height: 100vh;
     height: auto;
     width: 100vw;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,4 +51,8 @@
 
 .mb-3r{
     margin-bottom: 3rem!important;
+}
+
+.mt-3r{
+    margin-top: 3rem!important;
 }

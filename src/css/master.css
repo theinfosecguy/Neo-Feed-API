@@ -64,6 +64,10 @@
     .accordion-item{
         width: 300px!important;
     }
+
+    tr{
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width: 450px){
